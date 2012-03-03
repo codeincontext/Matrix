@@ -10,7 +10,7 @@ I'll be using Pusher in order to do all this in real time.
 
 This repo is split into 3 sections:
 
-- Rails - this is the rails bakend, that orchestrates communication between connected clients and pusher
+- Rails - this is the rails backend, that orchestrates communication between connected clients and pusher
 
 - Mac - the mac software that receives events from pusher, and sends display data to the arduino over serial
 
