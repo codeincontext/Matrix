@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA33ACC21502BB0500B3C6BC /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA33ACC11502BB0500B3C6BC /* IOKit.framework */; };
 		DA97A1A015026A7F00C1F5CD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA97A19F15026A7F00C1F5CD /* Cocoa.framework */; };
 		DA97A1AA15026A7F00C1F5CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA97A1A815026A7F00C1F5CD /* InfoPlist.strings */; };
 		DA97A1AC15026A7F00C1F5CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA97A1AB15026A7F00C1F5CD /* main.m */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA33ACC11502BB0500B3C6BC /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		DA97A19B15026A7F00C1F5CD /* Matrix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matrix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA97A19F15026A7F00C1F5CD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DA97A1A215026A7F00C1F5CD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA33ACC21502BB0500B3C6BC /* IOKit.framework in Frameworks */,
 				DA97A1A015026A7F00C1F5CD /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,6 +52,7 @@
 		DA97A19015026A7F00C1F5CD = {
 			isa = PBXGroup;
 			children = (
+				DA33ACC11502BB0500B3C6BC /* IOKit.framework */,
 				DA97A1A515026A7F00C1F5CD /* Matrix */,
 				DA97A19E15026A7F00C1F5CD /* Frameworks */,
 				DA97A19C15026A7F00C1F5CD /* Products */,
@@ -292,6 +296,7 @@
 				DA97A1BB15026A7F00C1F5CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

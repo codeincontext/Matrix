@@ -25,7 +25,7 @@
 
 - (NSString *) openSerialPort: (NSString *)serialPortFile baud: (speed_t)baudRate;
 - (void) loadSerialPortList;
-- (void) writeColor: (NSColor *)color;
+- (void) writeShit;
 - (void) writeByte: (int) val;
 - (void) start;
 @end

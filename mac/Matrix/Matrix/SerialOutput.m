@@ -129,19 +129,30 @@
 	return errorMessage;
 }
 
-- (void) writeColor: (NSColor *) color {
+- (void) writeShit {
     [self writeByte:0x55];    
     [self writeByte:0xAA];
+    NSLog(@"printing");
+//    int val;
     
-    int val;
-    val = [color redComponent]*255*0.9;
-    [self writeByte:val];
     
-    val = [color greenComponent]*255;
-    [self writeByte:val];
+    [self writeByte:85];
+    [self writeByte:170];
+    [self writeByte:85];
+    [self writeByte:170];
+    [self writeByte:85];
+    [self writeByte:170];
+    [self writeByte:85];
+    [self writeByte:170];
     
-    val = [color blueComponent]*255;
-    [self writeByte:val];
+//    val = [color redComponent]*255*0.9;
+//    [self writeByte:val];
+//    
+//    val = [color greenComponent]*255;
+//    [self writeByte:val];
+//    
+//    val = [color blueComponent]*255;
+//    [self writeByte:val];
 }
 
 - (void) writeByte: (int)val {
