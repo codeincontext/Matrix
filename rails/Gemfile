@@ -9,6 +9,7 @@ gem 'sqlite3'
 
 gem 'redis'
 gem 'haml'
+gem 'pg'
 
 
 # Gems used only for assets and not required
