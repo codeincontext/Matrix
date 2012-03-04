@@ -130,7 +130,7 @@
 }
 
 - (void) writeString:(NSString *)string {
-    stringToWrite = string;\
+    stringToWrite = [[NSString stringWithFormat:@"%@   ",  string] retain];
     if (timer){
         [timer invalidate];
     }
