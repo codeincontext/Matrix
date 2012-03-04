@@ -37,21 +37,6 @@ void loop() {
         showSprite();
       }
     }
-////    for(int i = 0; i < 8; i++){
-////        data[i] = 170;
-////    }
-////   //row 1s bit mask (1 LED is on 0 LED is off)
-//////    data[0] = B10101010; 
-//    data[0] = 170; 
-//////    data[1] = B01010101;
-//    data[1] = 85;
-//    data[2] = 170;
-//    data[3] = 85;
-//    data[4] = 170;
-//    data[5] = 85;
-//    data[6] = 170;
-//    data[7] = 85;
-//    showSprite();
 }
 
 void showSprite(){
