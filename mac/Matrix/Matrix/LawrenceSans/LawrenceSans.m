@@ -12,7 +12,7 @@
 
 + (NSArray *)getBytesFor:(unichar)character{
     
-    NSLog(@"char is %c", character);
+//    NSLog(@"char is %c", character);
     if (character == '1') {
         return [NSArray arrayWithObjects:
                 [NSNumber numberWithInt:0b00001000],
