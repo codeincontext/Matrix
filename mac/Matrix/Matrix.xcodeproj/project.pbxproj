@@ -17,6 +17,18 @@
 		DA97A1D315026B9600C1F5CD /* SerialOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = DA97A1D215026B9600C1F5CD /* SerialOutput.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DA8C91861502D70600892FD2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DA33ACC11502BB0500B3C6BC /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		DA97A19B15026A7F00C1F5CD /* Matrix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matrix.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +133,7 @@
 				DA97A19715026A7F00C1F5CD /* Sources */,
 				DA97A19815026A7F00C1F5CD /* Frameworks */,
 				DA97A19915026A7F00C1F5CD /* Resources */,
+				DA8C91861502D70600892FD2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -258,10 +271,22 @@
 		DA97A1BA15026A7F00C1F5CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Matrix/Matrix-Prefix.pch";
+				HEADER_SEARCH_PATHS = "Pusher.framework/**";
 				INFOPLIST_FILE = "Matrix/Matrix-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Matrix\"",
+				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -269,10 +294,22 @@
 		DA97A1BB15026A7F00C1F5CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Matrix/Matrix-Prefix.pch";
+				HEADER_SEARCH_PATHS = "Pusher.framework/**";
 				INFOPLIST_FILE = "Matrix/Matrix-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Matrix\"",
+				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
