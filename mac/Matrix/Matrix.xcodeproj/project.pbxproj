@@ -15,6 +15,7 @@
 		DA97A1B315026A7F00C1F5CD /* MXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA97A1B215026A7F00C1F5CD /* MXAppDelegate.m */; };
 		DA97A1B615026A7F00C1F5CD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA97A1B415026A7F00C1F5CD /* MainMenu.xib */; };
 		DA97A1D315026B9600C1F5CD /* SerialOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = DA97A1D215026B9600C1F5CD /* SerialOutput.m */; };
+		DAD728C9150316CE00A3E2E6 /* LawrenceSans.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD728C8150316CE00A3E2E6 /* LawrenceSans.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,8 @@
 		DA97A1B515026A7F00C1F5CD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		DA97A1D115026B9600C1F5CD /* SerialOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerialOutput.h; sourceTree = "<group>"; };
 		DA97A1D215026B9600C1F5CD /* SerialOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerialOutput.m; sourceTree = "<group>"; };
+		DAD728C7150316CE00A3E2E6 /* LawrenceSans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LawrenceSans.h; path = LawrenceSans/LawrenceSans.h; sourceTree = "<group>"; };
+		DAD728C8150316CE00A3E2E6 /* LawrenceSans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LawrenceSans.m; path = LawrenceSans/LawrenceSans.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				DA97A1B415026A7F00C1F5CD /* MainMenu.xib */,
 				DA97A1D115026B9600C1F5CD /* SerialOutput.h */,
 				DA97A1D215026B9600C1F5CD /* SerialOutput.m */,
+				DAD728C7150316CE00A3E2E6 /* LawrenceSans.h */,
+				DAD728C8150316CE00A3E2E6 /* LawrenceSans.m */,
 				DA97A1A615026A7F00C1F5CD /* Supporting Files */,
 			);
 			path = Matrix;
@@ -190,6 +195,7 @@
 				DA97A1AC15026A7F00C1F5CD /* main.m in Sources */,
 				DA97A1B315026A7F00C1F5CD /* MXAppDelegate.m in Sources */,
 				DA97A1D315026B9600C1F5CD /* SerialOutput.m in Sources */,
+				DAD728C9150316CE00A3E2E6 /* LawrenceSans.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

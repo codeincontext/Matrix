@@ -14,7 +14,7 @@
 #include <IOKit/IOBSD.h>
 #include <IOKit/serial/ioss.h>
 #include <sys/ioctl.h>
-#import "LawrenceSans.h"
+#import "LawrenceSans/LawrenceSans.h"
 
 @interface SerialOutput : NSObject{
     NSString *selectedSerialPort;
