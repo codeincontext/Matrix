@@ -13,6 +13,7 @@
 @interface MXAppDelegate : NSObject <NSApplicationDelegate>{
 @private
     SerialOutput *serialOutput;
+    NSMutableData *responseData;
 }
 
 @property (assign) IBOutlet NSWindow *window;

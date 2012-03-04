@@ -129,23 +129,20 @@
 	return errorMessage;
 }
 
-- (void) writeShit {
-    [self writeString:@"abcdefghijklmnopqrstuvwxyz"];
-}
-
 - (void) writeString:(NSString *)string {
-    while(true){
-        for (int i=0;i<[string length];i++){
-            [self writeByte:0x55];    
-            [self writeByte:0xAA];
-            [self writeLetter:[string characterAtIndex:i]];
-            usleep(500000);
-        }
+    stringToWrite = string;\
+    if (timer){
+        [timer invalidate];
     }
-    
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(writeLetter) userInfo:nil repeats:YES];
 }
 
-- (void) writeLetter:(NSString *)letter {
+- (void) writeLetter {
+    [self writeByte:0x55];    
+    [self writeByte:0xAA];
+    int index = currentPos++ % [stringToWrite length];
+    unichar letter = [stringToWrite characterAtIndex:index];
+    
     NSArray *bytes = [self getCharacterBytes:letter];
     
     for (int i=0;i<[bytes count];i++){
@@ -408,8 +405,15 @@
 
     
     NSLog(@"no match");
-    return [NSArray arrayWithObjects:0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000];
-}
+    return [NSArray arrayWithObjects:
+            [NSNumber numberWithInt:0b00000000],
+            [NSNumber numberWithInt:0b00000000],
+            [NSNumber numberWithInt:0b00000000],
+            [NSNumber numberWithInt:0b00000000],
+            [NSNumber numberWithInt:0b00000000],
+            [NSNumber numberWithInt:0b00000000],
+            [NSNumber numberWithInt:0b00000000],
+            [NSNumber numberWithInt:0b00000000],nil];}
      
 - (void) writeByte: (int)val {
 	if(serialFileDescriptor!=-1) {

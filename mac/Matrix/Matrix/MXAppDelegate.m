@@ -19,24 +19,44 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
-    
     serialOutput = [[SerialOutput alloc] init];
     [serialOutput start];
     
-//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:serialOutput selector:@selector(writeShit) userInfo:nil repeats:YES];
-    
-    [serialOutput writeShit];
-
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(pollForContent) userInfo:nil repeats:YES];
+    [self pollForContent];
 }
 
-- (void)getColor{
-    NSMutableData *responseData = [[NSMutableData data] retain];
-    NSURL *baseURL = [[NSURL URLWithString:@"http://store.apple.com"] retain];
-    
+- (void)pollForContent{
+    responseData = [[NSMutableData data] retain];
     NSURLRequest *request =
-    [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://store.apple.com"]];
+    [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://matrix.skatty.me/api"]];
     [[[NSURLConnection alloc] initWithRequest:request delegate:self] autorelease];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    [responseData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [responseData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"fail");
+
+    [[NSAlert alertWithError:error] runModal];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    // Once this method is invoked, "responseData" contains the complete result
+    NSLog(@"it's all finished loading innit");
+    NSString *stringToPrint = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    [serialOutput writeString:stringToPrint];
+
 }
 
 @end
