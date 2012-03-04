@@ -22,7 +22,7 @@
     serialOutput = [[SerialOutput alloc] init];
     [serialOutput start];
     
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(pollForContent) userInfo:nil repeats:YES];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(pollForContent) userInfo:nil repeats:YES];
     [self pollForContent];
 }
 
