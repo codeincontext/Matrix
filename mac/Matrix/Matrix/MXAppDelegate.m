@@ -54,8 +54,29 @@
 {
     // Once this method is invoked, "responseData" contains the complete result
     NSLog(@"it's all finished loading innit");
-    NSString *stringToPrint = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    [serialOutput writeString:stringToPrint];
+//    NSString *stringToPrint = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+    NSError *jsonError = nil;
+    NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&jsonError];
+    NSLog(@"parsingdinished");
+
+    if (jsonError) {
+        NSLog(@"error in parsing");
+
+        NSLog(@"JSON error %@", [jsonError description]);
+    } else {
+        NSLog(@"no error in json parsing");
+
+        NSString *stringToPrint = [responseDict objectForKey:@"text"];
+        if (stringToPrint.length > 0) {
+            NSLog(@"string to print: %@", stringToPrint);
+            [serialOutput writeString:stringToPrint];
+        } else {
+            [serialOutput writeValue:[responseDict objectForKey:@"value"]];
+        }
+
+    }
+//    
 
 }
 

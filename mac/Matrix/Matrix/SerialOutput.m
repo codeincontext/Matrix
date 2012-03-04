@@ -129,6 +129,34 @@
 	return errorMessage;
 }
 
+- (void) writeValue:(NSArray *)array {
+    arrayToWrite = [array retain];
+    if (timer){
+        [timer invalidate];
+    }
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(writeValueFromClassVar) userInfo:nil repeats:YES];
+}
+
+- (void) writeValueFromClassVar {
+    [self writeByte:0x55];    
+    [self writeByte:0xAA];
+    
+    for (int i = 0; i < [arrayToWrite count]; i++) {
+        NSArray *row = [arrayToWrite objectAtIndex:i];
+        
+        int total = 
+        128 * [[row objectAtIndex:0] intValue] +
+        64  * [[row objectAtIndex:1] intValue] +
+        32  * [[row objectAtIndex:2] intValue] +
+        16  * [[row objectAtIndex:3] intValue] +
+        8   * [[row objectAtIndex:4] intValue] +
+        4   * [[row objectAtIndex:5] intValue] +
+        2   * [[row objectAtIndex:6] intValue] +
+        1   * [[row objectAtIndex:7] intValue];
+        [self writeByte:total];
+    }
+}
+
 - (void) writeString:(NSString *)string {
     stringToWrite = [[NSString stringWithFormat:@"%@   ",  string] retain];
     if (timer){

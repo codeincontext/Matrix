@@ -25,6 +25,7 @@
     
     int currentPos;
     NSString *stringToWrite;
+    NSArray *arrayToWrite;
     NSTimer *timer;
 }
 

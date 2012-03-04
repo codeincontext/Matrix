@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 #include "SerialOutput.h"
-//#include "PusherSource.h"
 
 @interface MXAppDelegate : NSObject <NSApplicationDelegate>{
 @private
