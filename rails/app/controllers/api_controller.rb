@@ -1,6 +1,10 @@
 class ApiController < ApplicationController
   def update
-    success = REDIS.set 'matrix:values', params[:value].downcase
+    type = (params.keys & ['text', 'value']).first
+    
+    success   = REDIS.set 'matrix:type', type
+    success &&= REDIS.set 'matrix:values', params[type].downcase
+    
     if success
       render json: true, status: 200
     else
@@ -8,12 +12,13 @@ class ApiController < ApplicationController
     end
   end
   def show
+    type   = REDIS.get 'matrix:type'
     values = REDIS.get 'matrix:values'
-    render json: values
-  end
-
-private
-  def redis_key
-    'matrix:values'
+    
+    if type == 'text'
+      render json: {text: values}
+    else
+      render json: {value: JSON.parse(values)}
+    end
   end
 end
