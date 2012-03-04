@@ -1,6 +1,6 @@
 class ApiController < ApplicationController
   def update
-    success = REDIS.set 'matrix:values', params[:value]
+    success = REDIS.set 'matrix:values', params[:value].downcase
     if success
       render json: true, status: 200
     else
