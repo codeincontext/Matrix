@@ -501,6 +501,105 @@
                 [NSNumber numberWithInt:0b00110000],
                 [NSNumber numberWithInt:0b11000000],nil];
     }
+    if (character == '~') {
+        return [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b01100000],
+                [NSNumber numberWithInt:0b10011001],
+                [NSNumber numberWithInt:0b00000110],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],nil];
+    }
+    if (character == '-') {
+        return [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b11111111],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],nil];
+    }
+    if (character == '_') {
+        return [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b11111111],nil];
+    }
+    if (character == '+') {
+        return [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:0b00011000],
+                [NSNumber numberWithInt:0b00011000],
+                [NSNumber numberWithInt:0b00011000],
+                [NSNumber numberWithInt:0b11111111],
+                [NSNumber numberWithInt:0b11111111],
+                [NSNumber numberWithInt:0b00011000],
+                [NSNumber numberWithInt:0b00011000],
+                [NSNumber numberWithInt:0b00011000],nil];
+    }
+    if (character == '=') {
+        return [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b11111111],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b11111111],
+                [NSNumber numberWithInt:0b00000000],
+                [NSNumber numberWithInt:0b00000000],nil];
+    }
+    if (character == '(') {
+        return [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:0b00100000],
+                [NSNumber numberWithInt:0b01000000],
+                [NSNumber numberWithInt:0b10000000],
+                [NSNumber numberWithInt:0b10000000],
+                [NSNumber numberWithInt:0b10000000],
+                [NSNumber numberWithInt:0b10000000],
+                [NSNumber numberWithInt:0b01000000],
+                [NSNumber numberWithInt:0b00100000],nil];
+    }
+    if (character == ')') {
+        return [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:0b00000100],
+                [NSNumber numberWithInt:0b00000010],
+                [NSNumber numberWithInt:0b00000001],
+                [NSNumber numberWithInt:0b00000001],
+                [NSNumber numberWithInt:0b00000001],
+                [NSNumber numberWithInt:0b00000001],
+                [NSNumber numberWithInt:0b00000010],
+                [NSNumber numberWithInt:0b00000100],nil];
+    }
+    if (character == '[') {
+        return [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:0b11110000],
+                [NSNumber numberWithInt:0b10000000],
+                [NSNumber numberWithInt:0b10000000],
+                [NSNumber numberWithInt:0b10000000],
+                [NSNumber numberWithInt:0b10000000],
+                [NSNumber numberWithInt:0b10000000],
+                [NSNumber numberWithInt:0b10000000],
+                [NSNumber numberWithInt:0b11110000],nil];
+    }
+    if (character == ']') {
+        return [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:0b00001111],
+                [NSNumber numberWithInt:0b00000001],
+                [NSNumber numberWithInt:0b00000001],
+                [NSNumber numberWithInt:0b00000001],
+                [NSNumber numberWithInt:0b00000001],
+                [NSNumber numberWithInt:0b00000001],
+                [NSNumber numberWithInt:0b00000001],
+                [NSNumber numberWithInt:0b00001111],nil];
+    }
 
     
     NSLog(@"no match");
